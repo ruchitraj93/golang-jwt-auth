@@ -95,7 +95,6 @@ func UpdateAllTokens(signedToken string, signedRefreshToken string, userId strin
 }
 
 func ValidateToken(signedToken string) (claims *SignedDetails, msg string) {
-	fmt.Println("Secret=>", SECRET_KEY)
 	token, err := jwt.ParseWithClaims(
 		signedToken,
 		&SignedDetails{},
